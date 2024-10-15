@@ -10,10 +10,10 @@ const api = axios.create({
 });
 
 export interface User {
-  _id: string;
   name: string;
   email: string;
-  role: 'customer' | 'provider' | 'admin';
+  address?: string;
+  phone?: string;
 }
 
 export interface AuthResponse {
@@ -79,4 +79,3 @@ export const setAuthToken = (token: string): void => {
     localStorage.removeItem('token');
   }
 };
-
